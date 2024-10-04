@@ -61,7 +61,7 @@ const Skills = () => {
                   {/* Apply the class here */}
                   <h4 className="bold-text">{experience.title}</h4>
                   {/* <a href={experience.company_url}>{experience.company}</a> */}
-                  <p className="p-text  ">
+                  <p className="p-text .tag-cmp ">
                     <a href={experience.company_url}>{experience.company}</a>
                   </p>
                   <p
