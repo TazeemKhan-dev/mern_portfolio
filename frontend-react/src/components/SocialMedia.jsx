@@ -1,23 +1,24 @@
-import {BsTwitter,BsInstagram} from 'react-icons/bs'
-import { FaFacebook } from "react-icons/fa";
-import { GrLinkedin,GrGithub } from "react-icons/gr";
-
-
+import { GrLinkedin, GrGithub } from "react-icons/gr";
 
 const SocialMedia = () => {
+  const openLink = (url) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="app__social">
-      <div>
+      <div
+        onClick={() =>
+          openLink("https://www.linkedin.com/in/tazeem-khan-662a24207/")
+        }
+      >
         <GrLinkedin />
       </div>
-      <div>
+      <div onClick={() => openLink("https://github.com/TazeemKhan-dev")}>
         <GrGithub />
       </div>
-      {/* <div>
-        <FaFacebook />
-      </div> */}
     </div>
   );
-}
+};
 
-export default SocialMedia
+export default SocialMedia;
