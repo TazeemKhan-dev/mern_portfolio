@@ -1,8 +1,9 @@
-import React from "react";
 import { NavigationDots, SocialMedia } from "../components";
 
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
+    const currentYear = new Date().getFullYear(); // Get current year dynamically
+
     return (
       <div id={idName} className={`app__container ${classNames}`}>
         <SocialMedia />
@@ -10,7 +11,7 @@ const AppWrap = (Component, idName, classNames) =>
           <Component />
 
           <div className="copyright">
-            <p className="p-text">@20223 Tazeem Khan</p>
+            <p className="p-text">@{currentYear} Tazeem Khan</p>{" "}
             <p className="p-text">All rights reserved</p>
           </div>
         </div>
