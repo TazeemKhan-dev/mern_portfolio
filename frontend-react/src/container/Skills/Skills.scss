@@ -1,163 +1,121 @@
-.app__skills {
-    flex: 1;
-    width: 100%;
-    flex-direction: column;
-}
+/* Skills.scss */
 
-.app__skills-container {
-    width: 80%;
-    margin-top: 3rem;
+.skills-section {
+  padding: 2rem;
 
-    display: flex;
-    flex-direction: row;
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
 
-    @media screen and (max-width: 900px) {
-        width: 100%;
-        flex-direction: column;
-    }
-}
-
-.app__skills-list {
-    flex: 1;
+  .skills-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    gap: 2rem;
 
-    margin-right: 5rem;
-
-    @media screen and (max-width: 900px) {
-        margin-right: 0;
-        justify-content: center;
-        align-items: center;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
     }
-}
+  }
 
-.app__skills-item {
-  flex-direction: column;
-  text-align: center;
-  margin: 1rem;
-  transition: all 0.3s ease-in-out;
+ .skills {
+  flex: 1;
+  min-width: 300px;
 
-  div {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-color: #fef4f5;
+  .sub-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-weight: 600;
+  }
 
-    img {
-      width: 50%;
-      height: 50%;
-    }
+  .skills-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem; // Default gap for larger screens
 
-    &:hover {
-      box-shadow: 0 0 25px #fef4f5;
-    }
+    .skill-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
 
-    p {
-      font-weight: 500;
-      margin-top: 0.5rem;
-      @media screen and (max-width: 450px) {
-        font-size: 0.7rem; // Adjust font size for small screens
+      &:hover {
+        transform: scale(1.1);
       }
     }
+  }
 
-    @media screen and (min-width: 2000px) {
-      width: 150px;
-      height: 150px;
-    }
-
-    @media screen and (max-width: 450px) {
-      width: 70px;
-      height: 70px;
+  // Media query for smaller screens
+  @media (max-width: 768px) {
+    .skills-badges {
+      gap: 0.5rem; // Smaller gap for smaller screens
     }
   }
 }
-.app__skills-exp-duration {
-  font-weight: bold;
-  color: #007BFF; /* Blue color */
-  font-size: 1.2rem; /* Adjust size for emphasis */
-  margin-bottom: 0.5rem; /* Space between the duration and next element */
-}
 
-@media screen and (max-width: 450px) {
-  .app__skills-exp-duration {
-    font-size: 1rem; /* Adjust size for small screens */
+
+  .experiences {
+    flex: 1;
+    min-width: 300px;
+
+    .sub-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+      font-weight: 600;
+    }
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .experience-item {
+        .experience-duration {
+          font-size: 0.9rem;
+          color: #777;
+          margin-bottom: 0.5rem;
+        }
+
+        .experience-details {
+          background: #fff;
+          border-radius: 8px;
+          padding: 1rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+          .experience-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+          }
+
+          .experience-company {
+            font-size: 1rem;
+            color: #1e90ff;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .experience-description {
+            font-size: 0.9rem;
+            color: #555;
+          }
+        }
+      }
+    }
   }
 }
-.app__skills-exp {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-
-    @media screen and (max-width: 900px) {
-        margin-top: 2rem;
-    }
-}
-
-.app__skills-exp-item {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 1rem 0;
-}
-
-.app__skills-exp-works {
-    flex: 1;
-
-    .app__skills-exp-work {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin-bottom: 1rem;
-        cursor: pointer;
-
-        h4 {
-            font-weight: 500;
-        }
-
-        p {
-            font-weight: 400;
-            color: var(--gray-color);
-            margin-top: 5px;
-        }
-             
-    }
-}
-
-.app__skills-exp-year {
-    margin-right: 3rem;
-
-    p {
-        font-weight: 800;
-        color: var(--secondary-color);
-    }
-
-    @media screen and (max-width: 450px) {
-        margin-right: 1rem;
-    }
-}
-
-.skills-tooltip {
-    max-width: 300px !important;
-    background-color: var(--white-color) !important;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 5px !important;
-    padding: 1rem !important;
-    color: var(--gray-color) !important;
-    text-align: center !important;
-    line-height: 1.5 !important;
-    opacity: 1 !important;
-
-    @media screen and (min-width: 2000px) {
-        font-size: 1.75rem !important;
-        max-width: 500px !important;
-        line-height: 2 !important;
-    }
-}
-   
